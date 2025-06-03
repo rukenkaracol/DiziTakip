@@ -1,103 +1,76 @@
-# DiziTakip
 
-Aşko çok iyi gidiyosun, valla projen tam sunumluk olmuş! Sana GitHub linkli sade ve şık bir proje sunumu hazırlıyorum. Kopyala yapıştırla sunabilirsin ya da .pdf/.docx yaparsın istersen.
 
 ---
 
-## 🎬 Dizi-Film Takip Sistemi
+## Dizi-Film Takip Sistemi
 
-### 📌 Proje Linki:
+### Proje Linki
 
-[GitHub Repository](https://github.com/kullaniciAdin/projeAdi)
-*(GitHub'daki kendi linkinle değiştir)*
+[GitHub Repository](https://github.com/rukenkaracol/DiziTakip)
 
 ---
 
-### 📄 Proje Hakkında
+### Proje Hakkında
 
 Bu proje, kullanıcıların izledikleri dizi ve filmleri takip edebileceği bir masaüstü uygulamasıdır. Uygulama C# ve SQL Server kullanılarak geliştirilmiştir.
 
 ---
 
-### 🛠️ Kullanılan Teknolojiler
+### Kullanılan Teknolojiler
 
 * C# (.NET Windows Forms)
-* SQL Server (Veritabanı)
-* ADO.NET (SQL bağlantısı için)
-* GitHub (Versiyon kontrol)
+* SQL Server
+* ADO.NET
+* GitHub
 
 ---
 
-### 👤 Giriş / Kayıt Sistemi
+### Giriş / Kayıt Sistemi
 
-* Kullanıcılar e-posta ve şifreyle giriş yapar.
-* Üye olmayan kullanıcılar "Kayıt Ol" butonuyla sistemde hesap oluşturabilir.
-* Adminler ayrı yetkilere sahiptir (içerik düzenleme vs.)
+* Kullanıcılar e-posta ve şifre ile giriş yapar.
+* Üye olmayanlar "Kayıt Ol" butonuyla hesap oluşturabilir.
+* Admin kullanıcılar içerik yönetimi yetkisine sahiptir.
 
-🖼️ *Ekran Görüntüsü:*
 ![frmGiris](attachment\:file-Kpphp6NVAjcs9gNDjPjRbB)
 
 ---
 
-### 🎞️ Kullanıcı Paneli
+### Kullanıcı Paneli
 
-* Tüm içerikler listelenir.
-* İçerik arama, filtreleme ve puanlama yapılabilir.
-* Kullanıcı yalnızca kendi izleme geçmişine erişebilir.
-* İzleme durumu: "İzliyor", "Tamamlandı", "Bırakıldı" seçenekleriyle seçilebilir.
+* İçerikler listelenebilir, filtrelenebilir ve puanlanabilir.
+* Kullanıcılar sadece kendi izleme geçmişini görebilir.
+* İzleme durumu: "İzliyor", "Tamamlandı", "Bırakıldı".
 
-🖼️ *Ekran Görüntüsü:*
 ![frmKullanici](attachment\:file-DTFygs7CvbyxEUuiPQtcAH)
 
 ---
 
-### 🛡️ Admin Paneli
+### Admin Paneli
 
-* Yeni içerik ekleme
-* İçerik güncelleme ve silme
-* ContentID’ye göre tüm içerikler görüntülenebilir.
+* Yeni içerik eklenebilir, güncellenebilir veya silinebilir.
+* Tüm içerikler ContentID’ye göre görüntülenebilir.
 
-🖼️ *Ekran Görüntüsü:*
 ![frmAdmin](attachment\:file-UKiG2Qo5jQbmbTT9Sy45yx)
 
 ---
 
-### 🧠 Veritabanı Tasarımı
+### Veritabanı Tasarımı
 
-* 3 Ana Tablo: `Users`, `Contents`, `WatchRecords`
-* Kullanıcı, içerik ve izleme kayıtları arasında ilişkiler mevcuttur.
+Üç temel tablo kullanılmıştır:
 
-🖼️ *Veritabanı Şeması:*
-![Veri Şeması](attachment\:file-KdyJyZXeNy98144MPf63co)
+* `Users`
+* `Contents`
+* `WatchRecords`
 
----
-
-### 📌 İş Kuralları (Özet)
-
-1. Kayıtsız kullanıcı sadece içerik görüntüleyebilir.
-2. Kayıtlı kullanıcı içerik puanlayabilir, izleme durumunu değiştirebilir.
-3. Bir içerik yalnızca bir kez puanlanabilir (güncellenebilir).
-4. Kullanıcı sadece kendi geçmişini görebilir.
-5. Silinen içerikler kullanıcı geçmişinde görünmez.
+Bu tablolar arasında ilişkiler bulunmaktadır.
+![Veritabanı Şeması](attachment\:file-KdyJyZXeNy98144MPf63co)
 
 ---
 
-### 💾 Veritabanı Scripti
+### İş Kuralları
 
-Projenin veritabanı yapısını oluşturan SQL dosyası GitHub reposunda yer almaktadır:
-`SQLQuery21SON.sql`
-*(ya da aşağıya örnek satır ekleyebilirsin)*
-
-```sql
-CREATE TABLE Users (
-    UserID INT PRIMARY KEY IDENTITY(1,1),
-    Email NVARCHAR(100) NOT NULL UNIQUE,
-    Password NVARCHAR(100) NOT NULL,
-    IsAdmin BIT NOT NULL
-);
-```
-
----
-
-İstersen bu sunumu PowerPoint, Word ya da PDF'ye çevirebilirim. Renkli temalı versiyonunu da yaparız 💖
-Hazır mısın? "Eline sağlık" diyip bırakmam, istersen sana *pptx veya pdf* olarak da export ederim. Hangisini istersin?
+1. Kayıtsız kullanıcılar sadece içerikleri görüntüleyebilir.
+2. Kayıtlı kullanıcılar içerik ekleyip puan verebilir.
+3. İçerikler bir kez puanlanabilir, puan güncellenebilir.
+4. Kullanıcılar sadece kendi geçmişini görebilir.
+5. Silinen içerikler tüm geçmişten kaldırılır.
